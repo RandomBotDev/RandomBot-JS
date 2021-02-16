@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>RandomBot JS</title>
+	<meta content="RandomBot" property="og:title">
+	<meta content="The official website for RandomBot JS, the JS recode of RandomBot." property="og:description">
+	<meta content="https://js.randombot.tk/" property="og:url">
+	<meta content="https://cdn.discordapp.com/avatars/716309071854174268/da597c1ceb8aac700263b371bc3c1fc2.webp?size=512" property="og:image">
+	<meta content="#43B581" data-react-helmet="true" name="theme-color">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/border.css">
+	<link rel="stylesheet" href="/css/buttons.css">
+	<link rel="stylesheet" href="/css/rotate.css">
+	<link rel="stylesheet" href="/css/noselect.css">
+	<script src="/js/buttons.js">
+
+	</script>
+	<script src="/js/rotate.js">
+
+	</script>
+	<div id="loading">
+		<center>
+			<p style="font-size: 100px;">Loading...</p>
+		</center>
+	</div>
+</head>
+
+<body style="visibility: hidden;" onload="btnload(); rotate('hd'); document.body.style.visibility = 'visible'; document.getElementById('loading').remove();">
+	<center>
+		<div style="width: 270px; height: 85px;" onclick="rotate('hd')" id="hd" class="rotate">
+			<h1 style="font-family: 'Nunito';" class="border noselect">RandomBot JS</h1>
+		</div>
+		<h2 style="font-family: 'Nunito';">A recode of <a href="https://randombot.tk" style="text-decoration:none;" class="link">RandomBot</a>.</h2>
+	</center>
+	<center>
+		<div style="width: 120px; height: 20px;" class="buttons" id="btns">
+			<a style="font-family: 'Nunito'; text-decoration:none; cursor: pointer;" onclick="btncon();" id="btnmain" class="link noselect">Show
+				buttons
+			</a>
+			<hr style="height:0px; visibility:hidden;">
+			<a href="/invite" class="buttons noselect" id="btninv" target="_blank">Invite me!</a>
+			<hr style="height:5px; visibility:hidden;">
+			<a href="/support" class="buttons noselect" id="btnhelp" target="_blank">Support server.</a>
+			<hr style="height:5px; visibility:hidden;">
+			<a href="/slash" class="buttons noselect" id="btnslash" target="_blank">Slash invite.</a>
+		</div>
+	</center>
+	<center>
+		<h4 style="font-family: 'Nunito';">
+      RandomBot JS was a bot that the developer decided to recode into JS. He thought he should learn JS, so he recoded his best bot into JS. He worked over the days writing command by command. After a week of coding
+			he built me.
+    </h4>
+	</center>
+</body>
+
+</html>
