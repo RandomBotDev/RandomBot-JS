@@ -1,17 +1,17 @@
 {
   "name": "RandomBot-JS",
   "version": "1.0.0",
-  "description": "JS version of RandomBot",
+  "description": "JS version of my bot RandomBot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "GD Tom#0001",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.1"
-  }
+    "express": "^4.17.1"
+  },
+  "repository": "https://github.com/RandomBotDev/RandomBot-JS"
 }
