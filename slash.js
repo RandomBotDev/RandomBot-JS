@@ -6,27 +6,27 @@ greactors = []
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'cooltest',
   description: 'How cool are you?',
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'smarttest',
   description: 'How smart are you?',
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'impostor',
   description: 'Are you an impostor?',
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'flipcoin',
   description: 'Flip a coin.',
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'luckynumber',
   description: 'Generates a lucky number.',
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'randomnumber',
@@ -39,7 +39,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'passwordgen',
@@ -52,7 +52,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'choose',
@@ -65,7 +65,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'shufflesentence',
@@ -78,7 +78,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'shufflebyword',
@@ -91,7 +91,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'rate',
@@ -104,12 +104,12 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'yesorno',
   description: 'Randomly choose yes or no.',
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'binarygen',
@@ -122,7 +122,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'dice',
@@ -141,7 +141,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'giveaway',
@@ -166,7 +166,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'eject',
@@ -179,12 +179,12 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'colorgen',
   description: 'Generate a random hex color (with RGB).',
-}})
+}}).catch((err) => {})
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'decide',
@@ -197,7 +197,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}});
+}}).catch((err) => {});
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'shuffle',
@@ -210,7 +210,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}});
+}}).catch((err) => {});
 
 bot.api.applications('796745904228401202').commands.post({data: {
   name: 'risktest',
@@ -223,8 +223,7 @@ bot.api.applications('796745904228401202').commands.post({data: {
       required: true,
     }
   ],
-}});
-
+}}).catch((err) => {});
 
 
 

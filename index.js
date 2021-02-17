@@ -29,15 +29,13 @@ bot.on('message', async (message) => {
   if (!prefixRegex.test(message.content.toLowerCase())) return;
   const [, matchedPrefix] = message.content.toLowerCase().match(prefixRegex);
 
-  const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+  const args = message.content.slice(matchedPrefix.length).trim().split(/ +/g);
   const commandName = args.shift().toLowerCase();
 
   if (!bot.commands.has(commandName)) return;
 
   try {
-    if (commandName !== "giveawayslash") {
-      bot.commands.get(commandName).execute(message, args);
-    }
+    bot.commands.get(commandName).execute(message, args);
   } catch (error) {
 	  message.channel.send(`An error occured: ${error}`);
   }

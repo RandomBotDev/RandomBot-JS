@@ -12,6 +12,21 @@ function sleep(seconds){
   }
 }
 
+function toTime(seconds) {
+seconds = Number(seconds);
+var d = Math.floor(seconds / (3600*24));
+var h = Math.floor(seconds % (3600*24) / 3600);
+var m = Math.floor(seconds % 3600 / 60);
+var s = Math.floor(seconds % 60);
+
+var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days, ") : "";
+var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+if ((dDisplay + hDisplay + mDisplay + sDisplay) === "") return 0;
+return dDisplay + hDisplay + mDisplay + sDisplay;
+}
+
 module.exports = {
   name: "giveaway",
   description: "Start a giveaway.",
@@ -42,7 +57,7 @@ module.exports = {
       Embed = new Discord.MessageEmbed()
       Embed.setTitle("New Giveaway!")
       Embed.addField("Prize", reward, true)
-      Embed.addField("Time", `${gtime} seconds`, true)
+      Embed.addField("Time", `${toTime(gtime)} seconds`, true)
       Embed.addField("Host", value=`${message.author.username}#${message.author.discriminator}`, true)
       gembed = await channel.send(Embed)
       gembed.react("🎉")
@@ -51,16 +66,26 @@ module.exports = {
       } else {
         await message.channel.send("Giveaway started!")
       }
+      await sleep(10)
       nembed = null
       while (gtime > 0) {
-        gtime = gtime - 1
-        nembed = new Discord.MessageEmbed()
-        nembed.setTitle("New giveaway!")
-        nembed.addField("Prize", reward, true)
-        nembed.addField("Time", `${gtime} seconds`, true)
-        nembed.addField("Host", `${message.author.username}#${message.author.discriminator}`, true)
-        await gembed.edit(nembed)
-        await sleep(1)
+        gtime = gtime - 10
+        if (gtime <= 0) {
+          nembed = new Discord.MessageEmbed()
+          nembed.setTitle("New giveaway!")
+          nembed.addField("Prize", reward, true)
+          nembed.addField("Time", "0 seconds", true)
+          nembed.addField("Host", `${message.author.username}#${message.author.discriminator}`, true)
+          await gembed.edit(nembed)
+        } else {
+          nembed = new Discord.MessageEmbed()
+          nembed.setTitle("New giveaway!")
+          nembed.addField("Prize", reward, true)
+          nembed.addField("Time", `${toTime(gtime)}`, true)
+          nembed.addField("Host", `${message.author.username}#${message.author.discriminator}`, true)
+          await gembed.edit(nembed)
+          await sleep(10)
+        }
       }
       const index = greactors.indexOf(`${bot.user.username}#${bot.user.discriminator}`);
       if (index > -1) {
