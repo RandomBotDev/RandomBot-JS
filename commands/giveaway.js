@@ -13,18 +13,18 @@ function sleep(seconds){
 }
 
 function toTime(seconds) {
-seconds = Number(seconds);
-var d = Math.floor(seconds / (3600*24));
-var h = Math.floor(seconds % (3600*24) / 3600);
-var m = Math.floor(seconds % 3600 / 60);
-var s = Math.floor(seconds % 60);
+  seconds = Number(seconds);
+  var d = Math.floor(seconds / (3600*24));
+  var h = Math.floor(seconds % (3600*24) / 3600);
+  var m = Math.floor(seconds % 3600 / 60);
+  var s = Math.floor(seconds % 60);
 
-var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days, ") : "";
-var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
-var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
-var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
-if ((dDisplay + hDisplay + mDisplay + sDisplay) === "") return 0;
-return dDisplay + hDisplay + mDisplay + sDisplay;
+  var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days, ") : "";
+  var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+  var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+  var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+  if ((dDisplay + hDisplay + mDisplay + sDisplay) === "") return 0;
+  return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 
 module.exports = {
@@ -54,13 +54,14 @@ module.exports = {
         await message.channel.send("I can only do giveaways shorter than 1 day.")
         return
       }
+      if (!parseInt(args[1])) return message.channel.send("I need a valid time.");
       Embed = new Discord.MessageEmbed()
       Embed.setTitle("New Giveaway!")
       Embed.addField("Prize", reward, true)
-      Embed.addField("Time", `${toTime(gtime)} seconds`, true)
+      Embed.addField("Time", `${toTime(gtime)}`, true)
       Embed.addField("Host", value=`${message.author.username}#${message.author.discriminator}`, true)
       gembed = await channel.send(Embed)
-      gembed.react("🎉")
+      await gembed.react("🎉")
       if (message.channel.id === gembed.channel.id) {
 
       } else {

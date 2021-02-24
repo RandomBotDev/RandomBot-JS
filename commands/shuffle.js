@@ -22,11 +22,11 @@ module.exports = {
       return a.join("");
     }
     shuffled = `${args}`.shuffle()
-    if (sarg.startsWith("<@")) {
+    if (shuffled.startsWith("<@")) {
       ping = true
-    } else if (sarg === "@here") {
+    } else if (shuffled === "@here") {
       ping = true
-    } else if (sarg === "@everyone") {
+    } else if (shuffled === "@everyone") {
       ping = true
     }
     if (ping) {

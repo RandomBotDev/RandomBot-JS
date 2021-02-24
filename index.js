@@ -35,7 +35,9 @@ bot.on('message', async (message) => {
   if (!bot.commands.has(commandName)) return;
 
   try {
-    bot.commands.get(commandName).execute(message, args);
+    if (commandName !== "giveawayslash") {
+      await bot.commands.get(commandName).execute(message, args);
+    }
   } catch (error) {
 	  message.channel.send(`An error occured: ${error}`);
   }

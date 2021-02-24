@@ -9,6 +9,6 @@ module.exports = {
       return
     }
     risk = Math.floor(Math.random() * 101)
-    await message.channel.send(`***${args}*** is ${risk}% risky`)
+    await message.channel.send(`***${args.join(" ")}*** is ${risk}% risky`)
   }
 }
