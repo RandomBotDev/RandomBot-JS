@@ -9,6 +9,9 @@ module.exports = {
     } else if (args > 1975) {
       await message.channel.send("I can only generate passwords shorter than 1975 characters.")
       return
+    } else if (args < 6) {
+      await message.channel.send("The password must be 6 or more characters.")
+      return
     } else if (args.length === 1) {
       if (args > 5) {
         chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*();,./':<>?\[]}{-=+";

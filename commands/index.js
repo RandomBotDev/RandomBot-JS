@@ -21,4 +21,5 @@ module.exports = {
   Dice: require("./dice"),
   Rate: require("./rate"),
   RiskTest: require("./risktest"),
+  Eval: require("./eval"),
 }
