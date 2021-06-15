@@ -1,11 +1,13 @@
 const Discord = require("discord.js")
-const bot = new Discord.Client();
+const bot = new Discord.Client({ ws: { intents: Discord.Intents.ALL }});
 bot.commands = new Discord.Collection();
 const botCommands = require('./commands');
 const prefix = process.env.prefix
 require("./slash")
 require("./server")
+require("./inlineReply")
 const Ping = require("./commands/ping")
+const axios = require("axios")
 
 Object.keys(botCommands).map(key => {
   bot.commands.set(botCommands[key].name, botCommands[key]);
@@ -39,17 +41,25 @@ bot.on('message', async (message) => {
       await bot.commands.get(commandName).execute(message, args);
     }
   } catch (error) {
+    if (`${error}` === `DiscordAPIError: Cannot send an empty message`) return;
 	  message.channel.send(`An error occured: ${error}`);
   }
 });
 
-bot.on('ready', async () => {
+bot.once('ready', async () => {
   console.log(`${bot.user.username} main is ready to go!`);
   bot.user.setPresence({
     activity: {
       name: `${prefix}help | JS version of RandomBot`,
     },
   })
+	await axios.post(`https://top.gg/api/bots/${bot.user.id}/stats`, {
+		server_count: bot.guilds.cache.size
+	}, {
+		headers: {
+			"Authorization": process.env.topgg_token
+		}
+	})
 });
 
 bot.login(process.env.token)

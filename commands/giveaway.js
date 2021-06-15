@@ -130,5 +130,4 @@ bot.on('ready', async () => {
   console.log("Giveaway's are ready to go!")
 })
 
-
 bot.login(process.env.token)

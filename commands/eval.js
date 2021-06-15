@@ -7,12 +7,12 @@ module.exports = {
     } else {
       await message.channel.send("You are not the bot developer...")
     }
-    //const userId = message.guild.members.find(m => m.id === "588756782701215775")
-    var result = message.content.split(" ").slice(1).join(" ");
+    var result = args.join(" ");
     var evaled;
     try {
-      evaled = eval(result);
+      evaled = await eval(`(async () => { ${result} })()`);
     } catch (err) {
+      if (`${err}` === `DiscordAPIError: Cannot send an empty message`) return;
       message.channel.send(`${err}`)
       return
     }

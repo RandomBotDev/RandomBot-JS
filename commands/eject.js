@@ -12,7 +12,7 @@ module.exports = {
     const crew = ["black", "blue", "brown", "cyan", "darkgreen", "lime", "orange", "pink", "purple", "red", "white", "yellow"]
     const crewmate = crew[Math.floor(Math.random() * crew.length)];
 
-    ejected = `https://vacefron.nl/api/ejected?name=${encodeURIComponent(user.username)}&impostor=${imposter}&crewmate=${crewmate}`;
+    ejected = `https://js.randombot.tk/api/eject?name=${encodeURIComponent(user.username)}&impostor=${imposter}&crewmate=${crewmate}`;
                
     const Embed = new Discord.MessageEmbed();
     Embed.setImage(ejected);

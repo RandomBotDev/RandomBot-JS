@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 greactors = []
 
-bot = new Discord.Client();
+var bot = new Discord.Client();
 
 function sleep(seconds){
   ms = seconds * 1000
