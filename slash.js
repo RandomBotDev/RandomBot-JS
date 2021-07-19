@@ -148,7 +148,7 @@ bot.api.applications('796745904228401202').commands.post({
 			}
 		],
 	}
-}).catch((err) => { })
+})
 
 bot.api.applications('796745904228401202').commands.post({
 	data: {
@@ -358,7 +358,7 @@ bot.ws.on('INTERACTION_CREATE', async interaction => {
 			data: {
 				type: 4,
 				data: {
-					content: rnum
+					content: `${rnum}`
 				}
 			}
 		})
@@ -414,7 +414,7 @@ bot.ws.on('INTERACTION_CREATE', async interaction => {
 			data: {
 				type: 4,
 				data: {
-					content: role
+					content: `${role}`
 				}
 			}
 		})
@@ -432,7 +432,7 @@ bot.ws.on('INTERACTION_CREATE', async interaction => {
 			data: {
 				type: 4,
 				data: {
-					content: side
+					content: `${side}`
 				}
 			}
 		})
@@ -472,7 +472,7 @@ bot.ws.on('INTERACTION_CREATE', async interaction => {
 	}
 
 	else if (command === "binarygen") {
-		const length = args.find(arg => arg.name.toLowerCase() == "length").value;
+		const length = parseInt(args.find(arg => arg.name.toLowerCase() == "length").value);
 		bin = "01";
 		gbin = "";
 		for (gen1 = 0; gen1 < length; gen1++) {
@@ -486,7 +486,7 @@ bot.ws.on('INTERACTION_CREATE', async interaction => {
 			data: {
 				type: 4,
 				data: {
-					content: gbin
+					content: `${gbin}`
 				}
 			}
 		})
@@ -566,7 +566,7 @@ bot.ws.on('INTERACTION_CREATE', async interaction => {
 			data: {
 				type: 4,
 				data: {
-					content: shuffled
+					content: `${shuffled}`
 				}
 			}
 		})
@@ -634,7 +634,7 @@ bot.ws.on('INTERACTION_CREATE', async interaction => {
 				data: {
 					type: 4,
 					data: {
-						content: shuffled
+						content: `${shuffled}`
 					}
 				}
 			})
@@ -684,7 +684,7 @@ bot.ws.on('INTERACTION_CREATE', async interaction => {
 			data: {
 				type: 4,
 				data: {
-					content: shuffled
+					content: `${shuffled}`
 				}
 			}
 		})

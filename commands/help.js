@@ -43,9 +43,6 @@ module.exports = {
       const files1 = require(`./${files[file]}`);
       if (fLen == 10 || fLen === 13 || fLen === 16 || fLen === 7) {
         fLen = fLen + 1;
-      } else if (fLen % 1 === 1) {
-        Embed.addField(`${files1.name}`, `${files1.description}`, false);
-        fLen = fLen + 1;
       } else {
         Embed.addField(`${files1.name}`, `${files1.description}`, true);
         fLen = fLen + 1;

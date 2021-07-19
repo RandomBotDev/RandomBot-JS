@@ -1,6 +1,5 @@
 const express = require('express')
 const axios = require("axios")
-const https = require("https")
 const fs = require("fs")
 const app = express()
 const port = 8289
@@ -77,15 +76,6 @@ app.get("/api/eject", async (req, res) => {
 	res.end(img)
 })
 
-var privateKey = fs.readFileSync('ssl/server.key');
-var certificate = fs.readFileSync('ssl/server.crt');
-
-/*https.createServer({
-    key: privateKey,
-    cert: certificate
-}, app).listen(port, async () => {
-	console.log('Web server running.')
-});*/
 app.listen(port, async () => {
 	console.log('Web server running.')
 })
