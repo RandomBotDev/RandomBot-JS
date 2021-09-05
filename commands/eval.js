@@ -10,7 +10,7 @@ module.exports = {
     var result = args.join(" ");
     var evaled;
     try {
-      evaled = await eval(`(async () => { ${result} })()`);
+      evaled = await eval(`async (message) => { ${result.replace(/\`\`\`/g, "")} }`)(message);
     } catch (err) {
       if (`${err}` === `DiscordAPIError: Cannot send an empty message`) return;
       message.channel.send(`${err}`)

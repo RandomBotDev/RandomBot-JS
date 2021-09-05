@@ -10,9 +10,10 @@
   "author": "GD Tom#0001",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.3",
     "discord.js": "^12.5.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ws": "^8.2.1"
   },
   "repository": "https://github.com/RandomBotDev/RandomBot-JS"
 }
